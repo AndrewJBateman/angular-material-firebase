@@ -5,18 +5,21 @@ import { AppComponent } from './app.component';
 import { CreateProjectComponent } from './components/create-project/create-project.component';
 import { ListProjectsComponent } from './components/list-projects/list-projects.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreateProjectComponent,
-    ListProjectsComponent
-  ],
+  declarations: [AppComponent, CreateProjectComponent, ListProjectsComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

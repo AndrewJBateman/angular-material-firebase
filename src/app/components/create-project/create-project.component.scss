@@ -1,0 +1,21 @@
+.projectForm {
+  padding-bottom: 8px;
+
+  mat-card {
+    mat-form-field.mat-form-field {
+      width: 100%;
+    }
+
+    .addProjectCard {
+      max-width: 400px;
+    }
+
+    mat-card-actions.projectCardActions {
+      padding-left: 8px;
+
+      .saveBtn {
+        margin-right: 8px;
+      }
+    }
+  }
+}

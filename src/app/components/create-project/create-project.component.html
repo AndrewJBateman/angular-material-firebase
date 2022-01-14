@@ -1,1 +1,101 @@
-<p>create-project works!</p>
+<form
+  class="projectForm"
+  (ngSubmit)="onSaveProject()"
+  [formGroup]="projectForm"
+  [noValidate]="true"
+>
+  <mat-card class="addProjectCard">
+    <mat-card-header>
+      <mat-card-title>Create Project</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!--Input: project title-->
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input
+            type="text"
+            class="form-control projectInput"
+            matInput
+            placeholder="Enter text"
+            formControlName="title"
+          />
+        </mat-form-field>
+      </div>
+      <!--Input: project description-->
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input
+            type="text"
+            class="form-control projectDscription"
+            matInput
+            placeholder="Enter text"
+            formControlName="description"
+          />
+        </mat-form-field>
+      </div>
+      <!--Input: project reference-->
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Project Reference</mat-label>
+          <input
+            type="text"
+            class="form-control projectReference"
+            matInput
+            placeholder="Enter text"
+            formControlName="reference"
+          />
+        </mat-form-field>
+      </div>
+      <!--Input: project access code-->
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Project Access Code</mat-label>
+          <input
+            type="text"
+            class="form-control projectInput"
+            matInput
+            placeholder="Enter text"
+            formControlName="accessCode"
+          />
+        </mat-form-field>
+      </div>
+      <!--Input: project deadline-->
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Deadline</mat-label>
+          <input
+            type="text"
+            class="form-control projectDeadline"
+            matInput
+            placeholder="Enter text"
+            formControlName="deadline"
+          />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions class="projectCardActions">
+      <button
+        class="saveBtn"
+        mat-flat-button
+        type="submit"
+        color="primary"
+        [disabled]="
+          !projectForm.value.title ||
+          !projectForm.value.description ||
+          !projectForm.value.reference ||
+          !projectForm.value.deadline
+        "
+      >
+        Save
+      </button>
+      <button mat-flat-button color="warn">Clear</button>
+      <p>Form Status: {{ projectForm.status }}</p>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</form>
