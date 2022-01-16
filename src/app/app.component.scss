@@ -1,22 +1,11 @@
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background-color: #e91e63;
-  color: white;
-  font-weight: 600;
+.container {
+  height: 100vh;
 }
 
-.toolbar img {
-  margin: 0 16px;
+.left {
+  background-color: lightgray;
 }
 
-.content {
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 960px;
+.right {
+  background-color: beige;
 }
