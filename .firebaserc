@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ngprojects-3e862": {
+      "hosting": {
+        "angular-material-firebase": [
+          "ngprojects-3e862"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ngprojects-3e862"
+  }
+}
