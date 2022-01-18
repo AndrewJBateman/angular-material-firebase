@@ -26,7 +26,11 @@
 
 ## :books: General info
 
-* Project data stored
+* Project data stored in Firestore NoSQL database as a collection named "projects"
+* [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) used to display status info. popups
+* [Material Dialogs](https://material.angular.io/components/dialog/overview) used to open modals for create, edit & delete projects.
+* [Angular Material custom theme](https://material.angular.io/guide/theming#defining-a-theme)
+* [Dark mode]()
 
 ## :camera: Screenshots
 
@@ -38,6 +42,8 @@
 * [Angular Material v13](https://material.angular.io/)
 * [RxJS v7](https://rxjs-dev.firebaseapp.com/guide/overview)
 * [firebase v9](https://www.npmjs.com/package/firebase)
+* [Angular Reactive Forms](https://angular.io/guide/reactive-forms) used with a FormBuilder service & [form validation](https://angular.io/guide/form-validation) to handle form inputs as a group
+* [Sweetalert2](https://sweetalert2.github.io/) responsive popup boxes
 
 ## :floppy_disk: Setup
 
@@ -59,10 +65,11 @@
 ## :clipboard: Status & To-Do List
 
 * Status: In work
-* To-Do: Complete CRUD, add transloco, darkmode, SSR, PWA
+* To-Do: Complete form, firebase connect, CRUD, add transloco, darkmode, SSR, PWA
 
 ## :clap: Inspiration
 
+* [Daniel Kreider: Angular Project Structure Best Practices](https://danielk.tech/home/angular-project-structure-best-practices)
 * [Angular Material Darkmode in 3 Steps](https://zoaibkhan.com/blog/angular-material-dark-mode-in-3-steps/)
 
 ## :file_folder: License

@@ -6,7 +6,7 @@
 >
   <mat-card class="addProjectCard">
     <mat-card-header>
-      <mat-card-title>Create Project</mat-card-title>
+      <mat-card-title>{{title | uppercase}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <!--Input: project title-->
@@ -95,7 +95,7 @@
       <p>Form Status: {{ projectForm.status }}</p>
     </mat-card-actions>
     <mat-card-footer>
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
     </mat-card-footer>
   </mat-card>
 </form>

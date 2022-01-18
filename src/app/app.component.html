@@ -1,24 +1,24 @@
 <main>
-  <div class="content" role="main">
-    <h2 id="heading" style="text-align: center">Project Hub</h2>
+  <mat-toolbar color="primary">
+    <span>Angular 13 MatTable CRUD</span>
+  </mat-toolbar>
 
-    <div class="container" fxLayout.gt-sm="row" fxLayout.lt-sm="column">
-      <div
-        fxFlex.gt-sm="40%"
-        fxFlex.lt-sm="100%"
-        fxLayoutAlign="center center"
-        class="left"
-      >
-        <app-create-project></app-create-project>
-      </div>
-      <div
-        fxFlex.gt-sm="60%"
-        fxFlex.lt-md="100%"
-        fxLayoutAlign="center center"
-        class="right"
-      >
-        <app-list-projects></app-list-projects>
-      </div>
+  <div class="container" fxLayout.gt-md="row" fxLayout.lt-sm="column">
+    <div
+      fxFlex.gt-sm="40%"
+      fxFlex.lt-sm="100%"
+      fxLayoutAlign="center center"
+      class="left"
+    >
+      <app-createdit-project></app-createdit-project>
+    </div>
+    <div
+      fxFlex.gt-sm="60%"
+      fxFlex.lt-md="100%"
+      fxLayoutAlign="center center"
+      class="right"
+    >
+      <app-list-projects></app-list-projects>
     </div>
   </div>
 </main>

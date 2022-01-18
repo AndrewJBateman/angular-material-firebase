@@ -3,8 +3,11 @@ import { map, Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { Project } from 'src/app/models/Project';
-import { ProjectService } from 'src/app/services/project.service';
+import { Project } from 'src/app/projects/models/Project';
+import { ProjectService } from 'src/app/projects/services/project.service';
+import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteComponent } from '../../dialogs/delete/delete.component';
 
 @Component({
   selector: 'app-list-projects',
@@ -42,11 +45,17 @@ export class ListProjectsComponent implements OnInit {
     'reference',
     'accessCode',
     'createdDate',
+    'actions',
   ];
   dataSource: MatTableDataSource<Project> = new MatTableDataSource();
   id: string = '';
+  index: number = -1;
 
-  constructor(private projectService: ProjectService) {}
+  constructor(
+    private projectService: ProjectService,
+    private toastr: ToastrService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getProjects();
@@ -66,8 +75,36 @@ export class ListProjectsComponent implements OnInit {
     this.projectDataLoaded = true;
   };
 
-  applyFilter(event: Event) {
+  applyFilter = (event: Event) => {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  };
+
+  onCreateditProject = (project: Project) => {
+    this.projectService.addProjectEdit(project);
+  };
+
+  onCreateProject = () => {};
+
+  onDeleteProject = (
+    id: string,
+    title: string,
+    description: string,
+    reference: string,
+    accessCode: number,
+    createdDate: Date
+  ) => {
+    const dialogRef = this.dialog.open(DeleteComponent, {
+      data: { id, title, description, reference, accessCode, createdDate },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 1) {
+        const foundIndex = this.projectService.dataChange.value.findIndex(
+          (p) => (p.id = this.id)
+        );
+        this.projectService.dataChange.value.splice(foundIndex, 1);
+      }
+    });
+  };
 }
