@@ -7,13 +7,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import { AppComponent } from './app.component';
-import { CreateProjectComponent } from './components/create-project/create-project.component';
-import { ListProjectsComponent } from './components/list-projects/list-projects.component';
-import { MaterialModule } from './material/material.module';
+import { ListProjectsComponent } from './projects/components/list-projects/list-projects.component';
+import { MaterialModule } from './shared/material.module';
 import { environment } from 'src/environments/environment';
+import { DeleteComponent } from './projects/dialogs/delete/delete.component';
+import { CreateditComponent } from './projects/components/createdit/createdit.component';
 
 @NgModule({
-  declarations: [AppComponent, CreateProjectComponent, ListProjectsComponent],
+  declarations: [
+    AppComponent,
+    ListProjectsComponent,
+    DeleteComponent,
+    CreateditComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
