@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 import { Project } from 'src/app/projects/models/Project';
@@ -10,6 +10,8 @@ import { ProjectService } from 'src/app/projects/services/project.service';
   templateUrl: './createdit.component.html',
   styleUrls: ['./createdit.component.scss'],
 })
+// @ViewChild('projectForm', {static: true}) projectForm: NgForm
+
 export class CreateditComponent implements OnInit {
   projectForm!: FormGroup;
   title = 'Create Project';
@@ -24,9 +26,9 @@ export class CreateditComponent implements OnInit {
     this.initForm();
   }
 
+  // on init get project values if passed for editing
   ngOnInit(): void {
     this.projectService.getProjectEdit().subscribe((res) => {
-      console.log('res: ', res);
       this.title = 'Edit Project';
       this.id = res.id;
       this.projectForm.patchValue({
@@ -39,7 +41,11 @@ export class CreateditComponent implements OnInit {
     });
   }
 
-  onSaveProject() {
+  onClearForm = () => {
+    this.initForm();
+    this.projectForm.setErrors(null);
+  }
+  onSaveProject = (): void => {
     this.id === undefined ? this.addProject() : this.editProject(this.id);
   };
 
@@ -58,7 +64,7 @@ export class CreateditComponent implements OnInit {
       () => {
         this.loading = false;
         this.projectForm.reset();
-        this.toastr.info(`The project was saved`, 'Database updated');
+        this.toastr.info(`Project was saved`, 'DATABASE UPDATED');
       },
       (err) => {
         this.loading = false;
@@ -67,7 +73,7 @@ export class CreateditComponent implements OnInit {
     );
   };
 
-  editProject = async (id: string) => {
+  editProject = (id: string): void => {
     const project: any = {
       title: this.projectForm.value.title,
       description: this.projectForm.value.description,
@@ -77,13 +83,13 @@ export class CreateditComponent implements OnInit {
       updatedDate: new Date(),
     };
     this.loading = true;
-    await this.projectService.editProject(id, project).then(
+    this.projectService.editProject(id, project).then(
       () => {
         this.loading = false;
         this.title = 'Create Project';
         this.projectForm.reset();
         this.id = undefined;
-        this.toastr.info(`The project was updated`, 'Database updated');
+        this.toastr.info(`Project was updated`, 'DATABASE UPDATED');
       },
       (err) => {
         console.log(err);
@@ -119,7 +125,7 @@ export class CreateditComponent implements OnInit {
       ],
       deadline: [
         '',
-        [Validators.required, Validators.minLength(6), Validators.maxLength(6)],
+        [Validators.required, Validators.minLength(8)],
       ],
     });
   };

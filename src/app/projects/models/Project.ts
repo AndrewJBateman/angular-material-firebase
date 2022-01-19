@@ -2,7 +2,7 @@ export class Project {
   id?: string;
   title: string;
   description: string;
-  reference: string;
+  reference: number;
   deadline: Date;
   accessCode: number;
   createdDate: Date;
@@ -11,11 +11,8 @@ export class Project {
   constructor(
     title: string,
     description: string,
-    reference: string,
+    reference: number,
     accessCode: number,
-    deadline: string,
-    createdDate: string,
-    updatedDate: string
   ) {
     this.title = title;
     this.description = description;

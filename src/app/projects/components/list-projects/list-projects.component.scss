@@ -5,7 +5,13 @@
 table {
   width: 100%;
 
-  mat-cell {
-    color: blue;
+  th.mat-header-cell {
+    color: rgb(22, 22, 207);
+    padding: 8px;
+  }
+
+  td.mat-cell {
+    color: rgb(9, 9, 82);
+    padding: 8px;
   }
 }

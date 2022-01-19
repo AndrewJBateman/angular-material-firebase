@@ -27,16 +27,15 @@ export class ProjectService {
     return this.firebase.collection('projects').doc(id).delete();
   };
 
-  editProject (id: string, project: Project): Promise<any> {
-    console.log('projectservice: edit project', project)
+  editProject = (id: string, project: Project): Promise<any> => {
     return this.firebase.collection('projects').doc(id).update(project);
   };
 
-  addProjectEdit (project: Project) {
+  addProjectEdit = (project: Project) => {
     this.project$.next(project);
   };
 
-  getProjectEdit (): Observable<Project> {
+  getProjectEdit = (): Observable<Project> => {
     return this.project$.asObservable();
   }
 

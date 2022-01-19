@@ -5,7 +5,7 @@
 
 <!-- if project data is still loading-->
 <ng-template #loadingOrEmpty>
-  <div *ngIf="!projectDataLoaded">
+  <div>
     <mat-progress-spinner
       color="primary"
       mode="indeterminate"
@@ -39,19 +39,16 @@
     <ng-container matColumnDef="createdDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>CreatedDate</th>
       <td mat-cell *matCellDef="let row">
-        {{ row.createdDate.seconds * 1000 | date: "dd-MM-yyyy" }}
+        {{ row.createdDate.seconds * 1000 | date: "dd-MM-yyyy"}}
       </td>
     </ng-container>
 
     <!-- actions -->
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>
-        <button mat-icon-button color="primary">
-          <mat-icon aria-label="icon-button with a heart icon" (click)=onCreateProject()>add</mat-icon>
-        </button>
-      </mat-header-cell>
+      <th mat-header-cell *matHeaderCellDef>Actions
+      </th>
 
-      <mat-cell *matCellDef="let row; let i = index">
+      <td mat-cell *matCellDef="let row; let i = index">
         <button
           mat-icon-button
           color="primary"
@@ -76,7 +73,7 @@
         >
           <mat-icon aria-label="Delete">delete</mat-icon>
         </button>
-      </mat-cell>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
