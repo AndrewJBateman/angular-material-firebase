@@ -1,128 +1,130 @@
-<form
-  class="projectForm"
-  (ngSubmit)="onSaveProject()"
-  [formGroup]="projectForm"
-  [noValidate]="true"
->
-  <mat-card class="addProjectCard">
-    <mat-card-header>
-      <mat-card-title>{{ title | uppercase }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <!--Input: project title-->
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Title</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput
-            placeholder="Enter text"
-            formControlName="title"
-          />
-        </mat-form-field>
-      </div>
-      <!--Input: project description-->
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Description</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput
-            placeholder="Enter text"
-            formControlName="description"
-          />
-        </mat-form-field>
-      </div>
-      <!--Input: project reference-->
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Reference Number</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput
-            placeholder="enter 6 number"
-            minLength="7"
-            maxLength="7"
-            formControlName="reference"
-            mask="00-0000"
-          />
-        </mat-form-field>
-      </div>
-      <!--Input: project access code-->
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Project Access Code</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput
-            placeholder="Enter text"
-            minLength="4"
-            maxLength="4"
-            formControlName="accessCode"
-            mask="XXXX"
-            [hiddenInput]="true"
-          />
-        </mat-form-field>
-      </div>
-      <!--Input: project deadline-->
-      <div>
-        <mat-form-field appearance="fill">
-          <mat-label>Deadline</mat-label>
-          <input
-            type="text"
-            class="form-control"
-            matInput="10"
-            maxLength="10"
-            placeholder="00/00/0000"
-            formControlName="deadline"
-            mask="d0/00/0000"
-            [leadZeroDateTime]="true"
-          />
-        </mat-form-field>
-      </div>
-    </mat-card-content>
-    <mat-divider inset></mat-divider>
-    <mat-card-actions class="projectCardActions">
-      <button
-        class="saveBtn"
-        mat-flat-button
-        type="submit"
-        color="primary"
-        [disabled]="
-          !projectForm.value.title ||
-          !projectForm.value.description ||
-          !projectForm.value.reference ||
-          !projectForm.value.deadline
-        "
-      >
-        Save
-      </button>
-      <button
-        mat-flat-button
-        color="warn"
-        type="button"
-        (click)="onClearForm()"
-        [disabled]="
-          !projectForm.value.title ||
-          !projectForm.value.description ||
-          !projectForm.value.reference ||
-          !projectForm.value.deadline
-        "
-      >
-        Clear
-      </button>
-      <p>
-        Form Status:<span class="createdit-form-status">{{
-          projectForm.status | lowercase
-        }}</span>
-      </p>
-    </mat-card-actions>
-    <mat-card-footer *ngIf="loading">
-      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
-    </mat-card-footer>
-  </mat-card>
-</form>
+<mat-card>
+  <mat-label>{{ title | uppercase }}</mat-label>
+	<!-- <mat-card-header>
+		<mat-card-subtitle>{{ title | uppercase }}</mat-card-subtitle>
+	</mat-card-header> -->
+</mat-card>
+<mat-card>
+	<mat-card-content>
+		<form
+			class="projectForm"
+			(ngSubmit)="onSaveProject()"
+			[formGroup]="projectForm"
+			[noValidate]="true"
+		>
+			<!--Input: project title-->
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Title</mat-label>
+					<input
+						type="text"
+						class="form-control"
+						matInput
+						placeholder="Enter text"
+						formControlName="title"
+					/>
+				</mat-form-field>
+			</div>
+			<!--Input: project description-->
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Description</mat-label>
+					<input
+						type="text"
+						class="form-control"
+						matInput
+						placeholder="Enter text"
+						formControlName="description"
+					/>
+				</mat-form-field>
+			</div>
+			<!--Input: project reference-->
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Reference Number</mat-label>
+					<input
+						type="text"
+						class="form-control"
+						matInput
+						placeholder="enter 6 number"
+						minLength="7"
+						maxLength="7"
+						formControlName="reference"
+						mask="00-0000"
+					/>
+				</mat-form-field>
+			</div>
+			<!--Input: project access code-->
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Project Access Code</mat-label>
+					<input
+						type="text"
+						class="form-control"
+						matInput
+						placeholder="Enter text"
+						minLength="4"
+						maxLength="4"
+						formControlName="accessCode"
+						mask="XXXX"
+						[hiddenInput]="true"
+					/>
+				</mat-form-field>
+			</div>
+			<!--Input: project deadline-->
+			<div>
+				<mat-form-field appearance="fill">
+					<mat-label>Deadline</mat-label>
+					<input
+						type="text"
+						class="form-control"
+						matInput="10"
+						maxLength="10"
+						placeholder="00/00/0000"
+						formControlName="deadline"
+						mask="d0/00/0000"
+						[leadZeroDateTime]="true"
+					/>
+				</mat-form-field>
+			</div>
+			<div>
+				<button
+					class="saveBtn"
+					mat-flat-button
+					type="submit"
+					color="primary"
+					[disabled]="
+						!projectForm.value.title ||
+						!projectForm.value.description ||
+						!projectForm.value.reference ||
+						!projectForm.value.deadline
+					"
+				>
+					Save
+				</button>
+				<button
+					mat-flat-button
+					color="warn"
+					type="button"
+					(click)="onClearForm()"
+					[disabled]="
+						!projectForm.value.title ||
+						!projectForm.value.description ||
+						!projectForm.value.reference ||
+						!projectForm.value.deadline
+					"
+				>
+					Clear
+				</button>
+				<p>
+					Form Status:<span class="createdit-form-status">{{
+						projectForm.status | lowercase
+					}}</span>
+				</p>
+			</div>
+		</form>
+	</mat-card-content>
+	<mat-card-actions class="projectCardActions" *ngIf="loading">
+		<mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+	</mat-card-actions>
+</mat-card>

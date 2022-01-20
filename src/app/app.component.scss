@@ -1,11 +1,17 @@
+body {
+  background-color: rgb(187, 222, 238);
+  color: rgb(187, 222, 238);
+}
+
 .container {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.left {
-  background-color: lightgray;
-}
+// .left {
+//   background-color: lightgray;
+// }
 
-.right {
-  background-color: beige;
-}
+// .right {
+//   background-color: beige;
+// }

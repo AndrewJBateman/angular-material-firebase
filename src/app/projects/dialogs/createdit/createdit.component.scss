@@ -1,26 +1,21 @@
-.projectForm {
-  padding-bottom: 8px;
+mat-card {
+	width: 300px;
+	margin-left: 4px;
 
-  mat-card {
-    mat-form-field.mat-form-field {
-      width: 100%;
-    }
+	.projectForm {
+		padding-bottom: 8px;
+	}
 
-    .addProjectCard {
-      max-width: 400px;
-    }
+	mat-form-field.mat-form-field {
+		width: 100%;
+	}
 
-    mat-card-actions.projectCardActions {
-      padding-left: 8px;
+	.saveBtn {
+		margin-right: 8px;
+	}
 
-      .saveBtn {
-        margin-right: 8px;
-      }
-
-      .createdit-form-status {
-        padding: 4px 0 0 4px;
-        color: blue;
-      }
-    }
-  }
+	.createdit-form-status {
+		padding: 4px 0 0 4px;
+		color: blue;
+	}
 }
