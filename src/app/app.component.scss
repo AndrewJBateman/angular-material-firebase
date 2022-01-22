@@ -1,11 +1,21 @@
-body {
-  background-color: rgb(187, 222, 238);
-  color: rgb(187, 222, 238);
+main {
+	// background-color: rgb(187, 222, 238);
+	// color: rgb(187, 222, 238);
+  min-height: 100vh;
+}
+
+mat-toolbar {
+	display: flex;
+	align-items: center;
+
+	.flex-stretch {
+		flex: 1 0 auto;
+	}
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 // .left {

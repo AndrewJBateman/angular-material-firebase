@@ -43,7 +43,7 @@
 			<td mat-cell *matCellDef="let row; let i = index">
 				<button
 					mat-icon-button
-					color="primary"
+					color="ligth"
 					(click)="onEditProject(row)"
 				>
 					<mat-icon aria-label="Edit">edit</mat-icon>
@@ -51,7 +51,7 @@
 
 				<button
 					mat-icon-button
-					color="accent"
+					color="warn"
 					(click)="
 						onDeleteProject(
 							row.id,

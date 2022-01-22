@@ -14,6 +14,9 @@ import { environment } from 'src/environments/environment';
 import { DeleteComponent } from './projects/dialogs/delete/delete.component';
 import { CreateditComponent } from './projects/dialogs/createdit/createdit.component';
 
+import { SvgSunComponent } from './shared/components/svg-sun/svg-sun.component';
+import { SvgMoonComponent } from './shared/components/svg-moon/svg-moon.component';
+
 const maskConfig: Partial<IConfig> = {
   validation: false,
 };
@@ -23,7 +26,7 @@ const maskConfig: Partial<IConfig> = {
     AppComponent,
     CreateditComponent,
     DeleteComponent,
-    ListProjectsComponent,
+    ListProjectsComponent, SvgSunComponent, SvgMoonComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
