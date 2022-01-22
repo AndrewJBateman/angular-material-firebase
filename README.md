@@ -34,6 +34,7 @@
 ## :camera: Screenshots
 
 ![Example screenshot](./imgs/home.png)
+![Example screenshot](./imgs/dark.png)
 
 ## :signal_strength: Technologies
 
@@ -42,13 +43,12 @@
 * [RxJS v7](https://rxjs-dev.firebaseapp.com/guide/overview)
 * [firebase v9](https://www.npmjs.com/package/firebase)
 * [Angular Reactive Forms](https://angular.io/guide/reactive-forms) used with a FormBuilder service & [form validation](https://angular.io/guide/form-validation) to handle form inputs as a group
-* [Sweetalert2](https://sweetalert2.github.io/) responsive popup boxes
 * [ngx-mask v13](https://www.npmjs.com/package/ngx-mask) for masking of project date, access-code etc.
 
 ## :floppy_disk: Setup
 
 * Install dependencies using `npm i`
-* Add firebase credentials... to `environments` files
+* Add firebase credentials to `environments` files
 * Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
@@ -71,7 +71,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: toolbar, change project add/edit form to a dialog, add transloco, darkmode, SSR, PWA
+* To-Do: Deploy, change project add/edit form to a dialog, add transloco, SSR, PWA
 
 ## :clap: Inspiration
 
