@@ -1,6 +1,6 @@
 import { OverlayContainer } from "@angular/cdk/overlay";
 import { Component, HostBinding } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { UntypedFormControl } from "@angular/forms";
 
 @Component({
 	selector: "app-root",
@@ -11,7 +11,7 @@ export class AppComponent {
 	title = "angular-material-firebase";
 
   // initialise form-control instance
-	toggleControl = new FormControl(false);
+	toggleControl = new UntypedFormControl(false);
 
 	// set the class dynamically
 	@HostBinding("class") className = "";

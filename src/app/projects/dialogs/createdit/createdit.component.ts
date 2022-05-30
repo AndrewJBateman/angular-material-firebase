@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormBuilder, FormGroup, NgForm, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, NgForm, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 
 import { Project } from "src/app/projects/models/Project";
@@ -12,13 +12,13 @@ import { ProjectService } from "src/app/projects/services/project.service";
 })
 // @ViewChild('projectForm', {static: true}) projectForm: NgForm
 export class CreateditComponent implements OnInit {
-	projectForm!: FormGroup;
+	projectForm!: UntypedFormGroup;
 	title = "Create Project";
 	id: string | undefined;
 	loading: boolean = false;
 
 	constructor(
-		private fb: FormBuilder,
+		private fb: UntypedFormBuilder,
 		private projectService: ProjectService,
 		private toastr: ToastrService,
 	) {
