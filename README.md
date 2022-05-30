@@ -30,6 +30,7 @@
 * [ngx-toastr](https://www.npmjs.com/package/ngx-toastr) used to display status info. popups
 * [Material Dialogs](https://material.angular.io/components/dialog/overview) used to open modals for create, edit & delete projects.
 * [Angular Material custom theme](https://material.angular.io/guide/theming#defining-a-theme)
+* [Strictly typed forms in Angular](https://blog.ninja-squad.com/2022/04/21/strictly-typed-forms-angular/)
 
 ## :camera: Screenshots
 
@@ -38,8 +39,8 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v13](https://angular.io/)
-* [Angular Material v13](https://material.angular.io/)
+* [Angular v14](https://angular.io/)
+* [Angular Material v14](https://material.angular.io/)
 * [RxJS v7](https://rxjs-dev.firebaseapp.com/guide/overview)
 * [firebase v9](https://www.npmjs.com/package/firebase)
 * [Angular Reactive Forms](https://angular.io/guide/reactive-forms) used with a FormBuilder service & [form validation](https://angular.io/guide/form-validation) to handle form inputs as a group
@@ -57,11 +58,11 @@
 * Function to fetch the projects collection from a Google Firestore NoSQL database and order by date
 
 ```typescript
- 	getProjects = (): Observable<any> => {
-		return this.firebase
-			.collection("projects", ref => ref.orderBy("createdDate"))
-			.snapshotChanges();
-	};
+getProjects = (): Observable<Project[] | DocumentChangeAction<unknown>[]> => {
+  return this.firebase
+    .collection("projects", ref => ref.orderBy("createdDate"))
+    .snapshotChanges();
+};
 ```
 
 ## :cool: Features
@@ -71,7 +72,7 @@
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Deploy, change project add/edit form to a dialog, add transloco, SSR, PWA
+* To-Do: Deploy, change project add/edit form to a dialog, add transloco, SSR, PWA. Add form types in `createdit.component.ts`
 
 ## :clap: Inspiration
 
