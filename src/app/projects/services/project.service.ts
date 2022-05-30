@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFirestore, DocumentChangeAction } from "@angular/fire/compat/firestore";
 import { BehaviorSubject, Observable, Subject } from "rxjs";
 
 import { Project } from "../models/Project";
@@ -17,13 +17,13 @@ export class ProjectService {
 		return this.firebase.collection("projects").add(project);
 	};
 
-	getProjects = (): Observable<any> => {
+	getProjects = (): Observable<Project[] | DocumentChangeAction<unknown>[]> => {
 		return this.firebase
 			.collection("projects", ref => ref.orderBy("createdDate"))
 			.snapshotChanges();
 	};
 
-	deleteProject = (id: string): Promise<any> => {
+	deleteProject = (id: string): Promise<void> => {
 		return this.firebase.collection("projects").doc(id).delete();
 	};
 
