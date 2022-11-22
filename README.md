@@ -12,16 +12,16 @@
 ## :page_facing_up: Table of contents
 
 * [:zap: Angular Material Firebase](#zap-angular-material-firebase)
-  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:page\_facing\_up: Table of contents](#page_facing_up-table-of-contents)
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
-  * [:signal_strength: Technologies](#signal_strength-technologies)
-  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:signal\_strength: Technologies](#signal_strength-technologies)
+  * [:floppy\_disk: Setup](#floppy_disk-setup)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
-  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clipboard: Status \& To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
-  * [:file_folder: License](#file_folder-license)
+  * [:file\_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -39,12 +39,12 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v14](https://angular.io/)
-* [Angular Material v14](https://material.angular.io/)
+* [Angular v15](https://angular.io/)
+* [Angular Material v15](https://material.angular.io/)
 * [RxJS v7](https://rxjs-dev.firebaseapp.com/guide/overview)
 * [firebase v9](https://www.npmjs.com/package/firebase)
 * [Angular Reactive Forms](https://angular.io/guide/reactive-forms) used with a FormBuilder service & [form validation](https://angular.io/guide/form-validation) to handle form inputs as a group
-* [ngx-mask v13](https://www.npmjs.com/package/ngx-mask) for masking of project date, access-code etc.
+* [ngx-mask v14](https://www.npmjs.com/package/ngx-mask) for masking of project date, access-code etc.
 
 ## :floppy_disk: Setup
 
