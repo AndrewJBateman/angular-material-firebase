@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire/compat';
-import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { IConfig, NgxMaskDirective, provideEnvironmentNgxMask, NgxMaskPipe } from 'ngx-mask';
 
 import { AppComponent } from './app.component';
 import { ListProjectsComponent } from './projects/components/list-projects/list-projects.component';
@@ -34,11 +34,11 @@ const maskConfig: Partial<IConfig> = {
     BrowserAnimationsModule,
     FlexLayoutModule,
     MaterialModule,
-    NgxMaskModule.forRoot(maskConfig),
+    NgxMaskDirective, NgxMaskPipe,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [provideEnvironmentNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
