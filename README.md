@@ -39,12 +39,12 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v15](https://angular.io/)
-* [Angular Material v15](https://material.angular.io/)
+* [Angular v16](https://angular.io/)
+* [Angular Material v16](https://material.angular.io/)
 * [RxJS v7](https://rxjs-dev.firebaseapp.com/guide/overview)
 * [firebase v9](https://www.npmjs.com/package/firebase)
 * [Angular Reactive Forms](https://angular.io/guide/reactive-forms) used with a FormBuilder service & [form validation](https://angular.io/guide/form-validation) to handle form inputs as a group
-* [ngx-mask v14](https://www.npmjs.com/package/ngx-mask) for masking of project date, access-code etc.
+* [ngx-mask v16](https://www.npmjs.com/package/ngx-mask) for masking of project date, access-code etc.
 
 ## :floppy_disk: Setup
 
@@ -85,4 +85,4 @@ getProjects = (): Observable<Project[] | DocumentChangeAction<unknown>[]> => {
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: `gomezbateman@yahoo.com`
