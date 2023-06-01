@@ -72,7 +72,7 @@ getProjects = (): Observable<Project[] | DocumentChangeAction<unknown>[]> => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working
-* To-Do: Deploy, change project add/edit form to a dialog, add transloco, SSR, PWA. Add form types in `createdit.component.ts`
+* To-Do: Add form types, correct form so fields are not red after complete form submitted and form is reset. Deploy, change project add/edit form to a dialog, add transloco, SSR, PWA. Add form types in `createdit.component.ts`
 
 ## :clap: Inspiration
 
